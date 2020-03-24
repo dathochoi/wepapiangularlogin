@@ -1,0 +1,30 @@
+.logn, .sin{
+  text-decoration: none;
+  color: white;
+  padding:10px;
+  font-size: 15px;
+  transition: all 0.4s;
+  font-weight: 500;
+  text-shadow: black;
+
+}
+.row{
+  background-color: #343a40;
+  margin-bottom: 50px;
+
+
+
+}
+.logn:hover, .sin:hover{
+  border:tomato;
+  background: tomato;
+  color: white;
+}
+
+.container{
+  /* background-color: rgba(143, 143, 143, 0.123); */
+  background-color: #343a40;
+  padding:50px;
+   border-radius: 10px;
+   color:white;
+}

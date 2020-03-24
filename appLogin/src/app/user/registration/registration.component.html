@@ -1,0 +1,54 @@
+<div class="container ">
+  <div class="row" >
+    <div class="col-md-12">
+      <img src="/assets/img/add_user.png" alt="" class="mx-auto d-block">
+      <h1>User Registration</h1>
+
+      <form action="" [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+      <!-- <form action="" formGroup=""  autocomplete="off" (submit)="onSubmit()"> -->
+
+        <div class="form-group required">
+          <label for="usernameid">UserName</label>
+          <input type="text" class="form-control" formControlName="UserName" id="usernameid">
+          <label for="" class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This field is mandatory.</label>
+
+        </div>
+
+        <div class="form-group" >
+            <label for="emailid">Email</label>
+            <input type="mail" class="form-control" formControlName="Email" id="emailid">
+            <label for="" class="text-danger"*ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Invalid email address.</label>
+        </div>
+
+        <div class="form-group">
+          <label for="fullnameid">FullName</label>
+          <input type="text" class="form-control" formControlName="FullName" id="fullnameid">
+        </div>
+
+        <div formGroupName="Passwords">
+          <div class="form-group required">
+            <label for="passwordid">Password</label>
+            <input type="password" class="form-control" formControlName="Password" id="passwordid">
+            <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This field is mandatory.</label>
+            <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters required.</label>
+          </div>
+
+          <div class="form-group required">
+            <label for="repasswordid">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="ConfirmPassword" id="repasswordid">
+            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This field is mandatory.</label>
+            <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match.</label>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn buton"  style="width: 100%" [disabled]="!service.formModel.valid">Sign Up</button>
+            <!-- <button type="submit" class="btn btn btn-primary" style="width: 100%" >Sign Up</button> -->
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
